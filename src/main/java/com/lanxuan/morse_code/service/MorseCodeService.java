@@ -91,9 +91,11 @@ public class MorseCodeService {
         public String decryptCode(String morseCode) {
             String[] a = null;
             String b = "";
-            a = morseCode.split("/");
+            //"/"html转译成"%2F"
+            a = morseCode.split("%2F");
             for (int i = 0; i < a.length; i++) {
                 b = b + decryptMorseCode(a[i]);
+                System.out.println(a[i]);
             }
             return b;
         }
