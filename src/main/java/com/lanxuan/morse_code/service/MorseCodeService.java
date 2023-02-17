@@ -116,7 +116,7 @@ public class MorseCodeService {
                 morseCode=".";
             }
             if (code.equals("f")){
-                morseCode="..-.";
+                morseCode=".._.";
             }
             if (code.equals("g")){
                 morseCode="__.";
