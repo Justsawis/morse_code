@@ -14,4 +14,8 @@ public class MorseCodeController {
     public @ResponseBody String decryptMorseCode(@RequestBody String morseCode){
         return morseCodeService.decryptCode(morseCode);
     }
+    @PostMapping("/encryptionMorseCode")
+    public @ResponseBody String encryptionMorseCode(@RequestBody String code){
+       return morseCodeService.encryptionCode(code);
+    }
 }

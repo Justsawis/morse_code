@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MorseCodeService {
     public static String decryptMorseCode(String morseCode){
-        String code = "";
+            String code = "";
             if (morseCode .equals( "._")) {
                 code = "a";
             }
@@ -88,14 +88,134 @@ public class MorseCodeService {
             return code;
         }
 
-        public String decryptCode(String morseCode){
+        public String decryptCode(String morseCode) {
             String[] a = null;
             String b = "";
             a = morseCode.split("/");
-            for (int i = 0;i < a.length;i++){
+            for (int i = 0; i < a.length; i++) {
                 b = b + decryptMorseCode(a[i]);
             }
             return b;
+        }
+/////////////////////////////////////////////////////////
+        public static String encryptionMorseCode(String code){
+            String morseCode = "";
+            if (code.equals("a")){
+                morseCode="._";
+            }
+            if (code.equals("b")){
+                morseCode="_...";
+            }
+            if (code.equals("c")){
+                morseCode="_._.";
+            }
+            if (code.equals("d")){
+                morseCode="_..";
+            }
+            if (code.equals("e")){
+                morseCode=".";
+            }
+            if (code.equals("f")){
+                morseCode="..-.";
+            }
+            if (code.equals("g")){
+                morseCode="__.";
+            }
+            if (code.equals("h")){
+                morseCode="....";
+            }
+            if (code.equals("i")){
+                morseCode="..";
+            }
+            if (code.equals("j")){
+                morseCode=".___";
+            }
+            if (code.equals("k")){
+                morseCode="_._";
+            }
+            if (code.equals("l")){
+                morseCode="._..";
+            }
+            if (code.equals("m")){
+                morseCode="__";
+            }
+            if (code.equals("n")){
+                morseCode="_.";
+            }
+            if (code.equals("o")){
+                morseCode="___";
+            }
+            if (code.equals("p")){
+                morseCode=".__.";
+            }
+            if (code.equals("q")){
+                morseCode="__._";
+            }
+            if (code.equals("r")){
+                morseCode="._.";
+            }
+            if (code.equals("s")){
+                morseCode="...";
+            }
+            if (code.equals("t")){
+                morseCode="_";
+            }
+            if (code.equals("u")){
+                morseCode=".._";
+            }
+            if (code.equals("v")){
+                morseCode="..._";
+            }
+            if (code.equals("w")){
+                morseCode=".__";
+            }
+            if (code.equals("x")){
+                morseCode="_.._";
+            }
+            if (code.equals("y")){
+                morseCode="_.__";
+            }
+            if (code.equals("z")){
+                morseCode="__..";
+            }
+            if (code.equals("1")){
+                morseCode=".____";
+            }
+            if (code.equals("2")){
+                morseCode="..___";
+            }
+            if (code.equals("3")){
+                morseCode="...__";
+            }
+            if (code.equals("4")){
+                morseCode="...._";
+            }
+            if (code.equals("5")){
+                morseCode=".....";
+            }
+            if (code.equals("6")){
+                morseCode="_....";
+            }
+            if (code.equals("7")){
+                morseCode="__...";
+            }
+            if (code.equals("8")){
+                morseCode="___..";
+            }
+            if (code.equals("9")){
+                morseCode="____.";
+            }
+            if (code.equals("0")){
+                morseCode="_____";
+            }
+            return morseCode;
+        }
+        public String encryptionCode(String code){
+            String morseCode = "";
+            for (int i = 0;i < code.length();i++){
+                morseCode = morseCode + encryptionMorseCode(code.substring(i,i+1));
+            }
+            return morseCode;
         }
 
 }
