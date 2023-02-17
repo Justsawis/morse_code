@@ -213,7 +213,7 @@ public class MorseCodeService {
         public String encryptionCode(String code){
             String morseCode = "";
             for (int i = 0;i < code.length();i++){
-                morseCode = morseCode + encryptionMorseCode(code.substring(i,i+1));
+                morseCode = morseCode + "/" + encryptionMorseCode(code.substring(i,i+1));
             }
             return morseCode;
         }
