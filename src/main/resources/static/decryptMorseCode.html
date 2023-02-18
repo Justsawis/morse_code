@@ -25,7 +25,7 @@
             methods: {
                 deCode:function(){
                     var that = this;
-                    axios.post('http://localhost:8080/decryptMorseCode', that.txt)
+                    axios.post('/decryptMorseCode', that.txt)
                     .then(function (response) {
                         console.log(response);
                         that.code = response.data;
