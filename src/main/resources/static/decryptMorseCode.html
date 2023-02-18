@@ -4,16 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>解密</title>
     <script src="js/axios.min.js"></script>
     <script src="js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 引入组件库 -->
+    <script src="js/index.js"></script>
+    <script>
+        var goI = function () {
+            window.location.href = "index.html";
+        }
+    </script>
+
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="txt">
-        <button @click="deCode">解密</button>
+        <el-row>
+            <el-col :span="12">
+                <el-input type="text" v-model="txt" placeholder="请输入摩斯密码">
+            </el-col>
+            <el-col :span="12">
+                <el-button type="success" @click="deCode">解密</el-button>
+            </el-col>
+        </el-row>
+
+
         <div>{{code}}</div>
-        <a href="index.html"><button>主页</button></a>
+        <el-button onclick="goI()">主页</el-button>
     </div>
     <script>
         new Vue({

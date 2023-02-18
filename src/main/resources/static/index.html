@@ -2,17 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>坤</title>
     <script src="js/axios.min.js"></script>
+    <script src="js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 引入组件库 -->
+    <script src="js/index.js"></script>
+
+    <script>
+        var goE = function () {
+            window.location.href = "encryptionMorseCode.html";
+        }
+        var goD = function () {
+            window.location.href = "decryptMorseCode.html";
+        }
+    </script>
 </head>
 <body>
     <div id="app">
-        <a href="encryptionMorseCode.html"><button>加密</button></a>
-        <a href="decryptMorseCode.html"><button>解密</button></a>
+        <el-button type="primary" onclick="goE()">加密</el-button>
+        <el-button type="success" onclick="goD()">解密</el-button>
     </div>
-    
+    <script>
+        new Vue({
+            el:"#app",
+            data :{
+            },
+            methods: {
+
+            }
+        })
+    </script>
 </body>
 </html>
+
