@@ -24,6 +24,15 @@
             },
             methods: {
                 enCode:function(){
+
+                    var p = /^[0-9a-z]+$/;
+                    let r = p.test(this.txt);
+                    if (!r){
+                        alert("只能输入0-9和小写的a-z");
+                        return false;
+                    }
+                    //const isAlphanumeric = str => /^[0-9A-Z]+$/i.test(str);
+""
                     var that = this;
                     axios.post('/encryptionMorseCode', that.txt)
                     .then(function (response) {

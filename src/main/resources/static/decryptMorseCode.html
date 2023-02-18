@@ -24,6 +24,13 @@
             },
             methods: {
                 deCode:function(){
+                    var p = new RegExp("[._/]");
+                    let r = p.test(this.txt);
+                    if (!r){
+                        alert("只能输入.和_和/");
+                        return false;
+                    }
+
                     var that = this;
                     axios.post('/decryptMorseCode', that.txt)
                     .then(function (response) {
