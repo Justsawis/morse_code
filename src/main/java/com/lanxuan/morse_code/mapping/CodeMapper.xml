@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanxuan.morse_code.mapper.CodeMapper">
+
+    <resultMap id="result" type="com.lanxuan.morse_code.entity.Code">
+        <id column="id" jdbcType="INTEGER" javaType="java.lang.Integer" property="id"/>
+        <result column="ccode" jdbcType="VARCHAR" javaType="java.lang.String" property="ccode"/>
+        <result column="mcode" jdbcType="VARCHAR" javaType="java.lang.String" property="mcode"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.lanxuan.morse_code.entity.Code">
+        INSERT INTO `morse_code`.`code` (`ccode`, `mcode`) VALUES (#{ccode},#{mcode});
+    </insert>
+
+    <select id="getCodeByC" resultType="com.lanxuan.morse_code.entity.Code" parameterType="java.lang.String">
+        select  mcode
+        from code
+        where ccode = #{ccode};
+    </select>
+
+    <select id="getCodeByM" resultType="com.lanxuan.morse_code.entity.Code" parameterType="java.lang.String">
+        select ccode
+        from code
+        where mcode = #{mcode};
+    </select>
+
+    <select id="getCodeAll" resultMap="result">
+        SELECT *
+        FROM code;
+    </select>
+
+</mapper>

@@ -1,0 +1,10 @@
+server:
+  port: 80
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.107.142.251:3306/morse_code?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: Liu12345
+mybatis:
+  mapper-locations: classpath:com/lanxuan/morse_code/mapping/*.xml
