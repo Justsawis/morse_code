@@ -2,6 +2,7 @@ package com.lanxuan.morse_code.service;
 
 import com.lanxuan.morse_code.entity.Code;
 import com.lanxuan.morse_code.mapper.CodeMapper;
+import org.apache.catalina.core.ApplicationContext;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,7 +42,8 @@ public class MorseCodeDbServiceImpl implements MorseCodeService{
         return morseCode;
     }
 
-    public void a(){
+    @Override
+    public String test(){
         char b = 'a';
         Code code=new Code();
         for (int i = 0;i<=26;i++){
@@ -50,11 +52,7 @@ public class MorseCodeDbServiceImpl implements MorseCodeService{
             code.setCcode(c);
             codeMapper.insert(code);
         }
+        return "ok";
     }
-    public static void main(String[] args) {
 
-        MorseCodeDbServiceImpl morseCodeDbService = new MorseCodeDbServiceImpl();
-
-        morseCodeDbService.a();
-    }
 }
